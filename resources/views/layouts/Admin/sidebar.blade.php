@@ -14,6 +14,18 @@
                     <span
                         class="badge badge badge-info badge-pill float-right mr-2">{{ App\Models\User::Customer()->count() }}</span>
                 </a>
+                <a class="menu-item" href="{{ route('wedding-halls-categories.index') }}">
+                    <i class="icon-user"></i>
+                    <span data-i18n="Classic Menu">اقسام قاعات الافراح</span>
+                    <span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ App\Models\WeddingHallCategory::count() }}</span>
+                </a>
+                <a class="menu-item" href="{{ route('wedding-halls.index') }}">
+                    <i class="icon-user"></i>
+                    <span data-i18n="Classic Menu">قاعات الافراح</span>
+                    <span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ App\Models\WeddingHall::count() }}</span>
+                </a>
             </li>
         </ul>
     </div>
