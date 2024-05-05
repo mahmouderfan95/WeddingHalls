@@ -51,30 +51,41 @@ class WeddingHallsCategoryServices{
         }
     }
 
-    public function edit(WeddingHallCategory $weddingHallCategory)
+    public function edit($id)
     {
+        $weddingHallCategory = $this->getModelById($id);
         return view('Admin.wedding_halls_category.edit',compact('weddingHallCategory'));
     }
 
-    public function update(WeddingHallCategory $weddingHallCategory,Store $request)
+    public function update($id,Store $request)
     {
         try{
             $this->alertService->getAlertMessage('success message',trans('custom.success_messages.user_updated'));
-            $weddingHallCategory = $weddingHallCategory->update($request->validated());
+            $weddingHallCategory = $this->getModelById($id);
+            $weddingHallCategory->update($request->validated());
             return redirect(route('wedding-halls-categories.index'));
         }catch (\Exception $exception){
             return $this->alertService->getAlertMessageError('error message',$exception->getMessage());
         }
     }
 
-    public function destroy(WeddingHallCategory $weddingHallCategory)
+    public function destroy($id)
     {
         try{
             $this->alertService->getAlertMessage('success message',trans('custom.success_messages.user_deleted'));
+            $weddingHallCategory = $this->getModelById($id);
             $weddingHallCategory->delete();
             return redirect()->back();
         }catch (\Exception $exception){
             return $this->alertService->getAlertMessageError('error message',$exception->getMessage());
         }
+    }
+    private function getModelById($id)
+    {
+        return $this->getModel()::find($id);
+    }
+    private function getModel()
+    {
+        return 'App\Models\WeddingHallCategory';
     }
 }

@@ -24,16 +24,16 @@ class WeddingHallsCategoryController extends Controller
     {
         return $this->weddingHallsCategoryServices->store($request);
     }
-    public function edit(WeddingHallCategory $weddingHallCategory)
+    public function edit($id)
     {
-        return $this->weddingHallsCategoryServices->edit($weddingHallCategory);
+        return $this->weddingHallsCategoryServices->edit($id);
     }
-    public function update(WeddingHallCategory $weddingHallCategory,Store $request)
+    public function update($id,Store $request)
     {
-        return $this->weddingHallsCategoryServices->update($weddingHallCategory,$request);
+        return $this->weddingHallsCategoryServices->update($id,$request);
     }
-    public function destroy(WeddingHallCategory $weddingHallCategory)
+    public function destroy($id)
     {
-        return $this->weddingHallsCategoryServices->destroy($weddingHallCategory);
+        return $this->weddingHallsCategoryServices->destroy($id);
     }
 }

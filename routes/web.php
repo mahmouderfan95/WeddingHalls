@@ -29,5 +29,5 @@ Route::group(['middleware' => 'auth:web'],function(){
     // wedding halls categories
     Route::resource('wedding-halls-categories',WeddingHallsCategoryController::class)->except(['show']);
     // wedding halls
-    Route::resource('wedding-halls',WeddingHallsController::class);
+    Route::resource('wedding-halls',WeddingHallsController::class)->except(['show']);
 });
