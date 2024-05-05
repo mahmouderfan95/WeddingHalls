@@ -73,6 +73,20 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <label for="location">الموقع</label>
+                                                            <input id="location" type="text" class="form-control"
+                                                                name="location" value="{{ old('location') }}"
+                                                                placeholder="location" required>
+                                                        </div>
+                                                        @error('location')
+                                                            <p class="text-danger" style="font-size: 12px">{{ $message }}
+                                                            </p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
                                                             <label for="price">قسم القاعة</label>
                                                             <select id="wedding_hall_category_id" class="form-control" name="wedding_hall_category_id">
                                                                 @foreach ($weddingHallCategories as $item)

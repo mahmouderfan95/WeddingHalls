@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\WeddingHallCategoryController;
+use App\Http\Controllers\API\WeddingHallController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +29,10 @@ Route::group(['middleware' => 'guest:sanctum'],function(){
     Route::post('user/register',[AuthController::class,'register']);
     // login api
     Route::post('user/login',[AuthController::class,'login']);
+    // get wedding hall categories
+    Route::get('wedding-hall-categories',[WeddingHallCategoryController::class,'index']);
+    // get wedding hall route
+    Route::get('wedding-halls',[WeddingHallController::class,'index']);
+    // get wedding halls details
+    Route::get('wedding-halls/{id}',[WeddingHallController::class,'show']);
 });

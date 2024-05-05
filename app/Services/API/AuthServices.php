@@ -20,7 +20,7 @@ class AuthServices{
         // create token
         $token = $user->createToken('my-app')->plainTextToken;
         // event(new SendEmailAfterRegister($user));
-        return $this->MakeResponseAuth($user,'success message',true,200,$token);
+        return $this->MakeResponseAuth(new LoginResource($user),'success message',true,200,$token);
     }
     public function login(Login $request)
     {

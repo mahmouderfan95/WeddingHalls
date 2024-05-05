@@ -28,7 +28,8 @@ class Store extends FormRequest
                     'name' => 'required|string',
                     'image' => 'required|image|mimes:png,jpg|max:4000',
                     'price' => 'required',
-                    'wedding_hall_category_id' => 'required|exists:wedding_hall_categories,id'
+                    'wedding_hall_category_id' => 'required|exists:wedding_hall_categories,id',
+                    'location' => 'required',
                 ];
             }
             case 'PUT':
@@ -39,7 +40,8 @@ class Store extends FormRequest
                     'name' => 'required|string',
                     'image' => 'image|mimes:png,jpg|max:4000',
                     'price' => 'required',
-                    'wedding_hall_category_id' => 'required|exists:wedding_hall_categories,id'
+                    'wedding_hall_category_id' => 'required|exists:wedding_hall_categories,id',
+                    'location' => 'required',
                 ];
             }
             default: break;

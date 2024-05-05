@@ -91,6 +91,7 @@
                                                         <th>الصورة</th>
                                                         <th>السعر</th>
                                                         <th>تاريخ الاضافة</th>
+                                                        <th>الموقع</th>
                                                         <th>العمليات</th>
                                                     </tr>
                                                 </thead>
@@ -100,9 +101,15 @@
                                                             <tr>
                                                                 <td>{{ $index + 1 }}</td>
                                                                 <td>{{ $admin->name ?? '-' }}</td>
-                                                                <td><img src="{{ asset('uploads/weddingHalls/' .$admin->image ?? '-' )}}" width="100"></td>
+                                                                <td><img src="{{ asset('uploads/weddingHalls/' . $admin->image ?? '-') }}"
+                                                                        width="100"></td>
                                                                 <td>{{ $admin->price ?? '-' }}</td>
                                                                 <td>{{ $admin->created_at->format('d/m/Y') ?? '-' }}</td>
+                                                                <td><iframe src="{{ $admin->location }}" width="200"
+                                                                        height="100" style="border:0;" allowfullscreen=""
+                                                                        loading="lazy"
+                                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                                </td>
                                                                 <td>
                                                                     <a href="{{ route('wedding-halls.edit', $admin->id) }}"
                                                                         class="btn btn-info btn-sm">
@@ -133,7 +140,8 @@
                                                                                         <div class="modal-content">
                                                                                             <div class="modal-header">
                                                                                                 <h4 class="modal-title"
-                                                                                                    id="myModalLabel62"> حذف
+                                                                                                    id="myModalLabel62">
+                                                                                                    حذف
                                                                                                 </h4>
                                                                                                 <button type="button"
                                                                                                     class="close"
