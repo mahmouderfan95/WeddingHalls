@@ -17,4 +17,8 @@ class WeddingHallController extends Controller
     {
         return $this->weddingHallServies->show($id);
     }
+    public function getWeddingByCategory($id)
+    {
+        return $this->weddingHallServies->getWeddingByCategory($id);
+    }
 }

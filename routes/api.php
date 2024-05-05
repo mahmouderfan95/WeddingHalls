@@ -35,4 +35,6 @@ Route::group(['middleware' => 'guest:sanctum'],function(){
     Route::get('wedding-halls',[WeddingHallController::class,'index']);
     // get wedding halls details
     Route::get('wedding-halls/{id}',[WeddingHallController::class,'show']);
+    /// get wedding halls by category
+    Route::get('wedding-halls/category/{cat_id}',[WeddingHallController::class,'getWeddingByCategory']);
 });

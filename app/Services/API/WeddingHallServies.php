@@ -19,6 +19,13 @@ class WeddingHallServies{
             return $this->MakeResponse(new WeddingHallResource($data),'success message',true,200);
         return $this->MakeResponse([],'data not found',false,400);
     }
+    public function getWeddingByCategory($id)
+    {
+        $data = $this->getModel()::where('wedding_hall_category_id',$id)->get();
+        if($data)
+            return $this->MakeResponse(WeddingHallResource::collection($data),'success message',true,200);
+        return $this->MakeResponse([],'data not found',false,400);
+    }
     public function getModel()
     {
         return 'App\Models\WeddingHall';
