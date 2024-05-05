@@ -22,7 +22,7 @@ class WeddingHallServies{
     public function getWeddingByCategory($id)
     {
         $data = $this->getModel()::where('wedding_hall_category_id',$id)->get();
-        if($data)
+        if($data->count() > 0)
             return $this->MakeResponse(WeddingHallResource::collection($data),'success message',true,200);
         return $this->MakeResponse([],'data not found',false,400);
     }
