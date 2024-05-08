@@ -50,7 +50,8 @@ class WeddingHallsServices
                 'name' => $request->get('name'),
                 'image' => $uploadImage,
                 'price' => $request->get('price'),
-                'wedding_hall_category_id' => $request->wedding_hall_category_id
+                'wedding_hall_category_id' => $request->wedding_hall_category_id,
+                'location' => $request->location,
             ]);
             return redirect(route('wedding-halls.index'));
         }catch (\Exception $exception){
@@ -80,7 +81,8 @@ class WeddingHallsServices
                 $weddingHall->update([
                     'name' => $request->get('name'),
                     'price' => $request->get('price'),
-                    'wedding_hall_category_id' => $request->wedding_hall_category_id
+                    'wedding_hall_category_id' => $request->wedding_hall_category_id,
+                    'location' => $request->location
                 ]);
             }
             return redirect(route('wedding-halls.index'));
@@ -98,7 +100,7 @@ class WeddingHallsServices
                 $this->_checkImageExist($weddingHall->image,'uploads/weddingHalls/');
                 $weddingHall->delete();
                 return redirect()->back();
-            
+
         } catch (\Exception $exception) {
             return $this->alertService->getAlertMessageError('error message', $exception->getMessage());
         }

@@ -19,7 +19,8 @@ class WeddingHallResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'image' => $this->image != null ? asset('uploads/weddingHalls/' . $this->image) : null,
-            'wedding_hall_category_id' => $this->relationLoaded('weddingHallCategory') ? $this->weddingHallCategory->name : null
+            'wedding_hall_category_id' => $this->relationLoaded('weddingHallCategory') ? $this->weddingHallCategory->name : null,
+            'location' => $this->location
         ];
     }
 }

@@ -22,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 // });
 // auth routes
 Route::group(['middleware' => 'auth:sanctum'],function(){
-
+    // wedding_hall_booking
+    Route::post('user/wedding-hall-booking',[WeddingHallController::class,'booking']);
 });
 Route::group(['middleware' => 'guest:sanctum'],function(){
     // register api

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\BookingRequest;
 use App\Services\API\WeddingHallServies;
 use Illuminate\Http\Request;
 
@@ -20,5 +21,9 @@ class WeddingHallController extends Controller
     public function getWeddingByCategory($id)
     {
         return $this->weddingHallServies->getWeddingByCategory($id);
+    }
+    public function booking(BookingRequest $request)
+    {
+        return $this->weddingHallServies->booking($request);
     }
 }
