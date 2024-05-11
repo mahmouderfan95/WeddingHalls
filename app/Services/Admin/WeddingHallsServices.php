@@ -17,15 +17,18 @@ class WeddingHallsServices
     public function index($perPage = 20)
     {
         try {
+            $categories = WeddingHallCategory::get(['id','name']);
             $name = request()->has('search') ? request()->get('search') : null;
+            $category = request()->has('wedding_hall_category_id') ? request()->get('wedding_hall_category_id') : null;
             $createDate = request()->has('created_at') ? request()->get('created_at') : null;
             $weddingHalls = $this->weddingHall
                 ->query()
                 ->when($name && $name !== null, fn ($q) => $q->where('name', 'like', "%$name%"))
+                ->when($category && $category !== null, fn ($q) => $q->where('wedding_hall_category_id',$category))
                 ->when($createDate && $createDate !== null, fn ($q) => $q->where('created_at', $createDate))
                 ->orderBy('id', 'desc')
                 ->paginate($perPage);
-            return view('Admin.wedding_halls.index', compact('weddingHalls'));
+            return view('Admin.wedding_halls.index', compact('weddingHalls','categories'));
         } catch (\Exception $exception) {
             return $this->alertService->getAlertMessageError('error message', $exception->getMessage());
         }

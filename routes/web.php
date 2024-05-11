@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\WeddingHallBookingController;
 use App\Http\Controllers\Admin\WeddingHallsCategoryController;
 use App\Http\Controllers\Admin\WeddingHallsController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,6 @@ Route::group(['middleware' => 'auth:web'],function(){
     Route::resource('wedding-halls-categories',WeddingHallsCategoryController::class)->except(['show']);
     // wedding halls
     Route::resource('wedding-halls',WeddingHallsController::class)->except(['show']);
+    // wedding hall booking
+    route::resource('wedding-halls-booking',WeddingHallBookingController::class)->except(['show']);
 });

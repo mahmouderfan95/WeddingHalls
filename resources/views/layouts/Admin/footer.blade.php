@@ -4,8 +4,8 @@
         <span class="float-md-left d-block d-md-inline-block">
             {{ __('admins.copyright') }} &copy; 2023
             <a class="text-bold-800 grey darken-2"
-               href="https://1.envato.market/modern_admin"
-               target="_blank">Odeal</a></span><span
+               href="#"
+               target="_blank">Wedding Hall</a></span><span
             class="float-md-right d-none d-lg-block">
             {{ __('admins.footer') }}
             <i class="ft-heart pink"></i><span id="scroll-top"></span>

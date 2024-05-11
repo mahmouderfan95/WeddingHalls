@@ -26,6 +26,12 @@
                     <span
                         class="badge badge badge-info badge-pill float-right mr-2">{{ App\Models\WeddingHall::count() }}</span>
                 </a>
+                <a class="menu-item" href="{{ route('wedding-halls-booking.index') }}">
+                    <i class="icon-user"></i>
+                    <span data-i18n="Classic Menu">الحجوزات</span>
+                    <span
+                        class="badge badge badge-info badge-pill float-right mr-2">{{ App\Models\WeddingHallBooking::count() }}</span>
+                </a>
             </li>
         </ul>
     </div>

@@ -57,14 +57,7 @@
                                                         <div class="input-group mb-3">
                                                             <input type="text" class="form-control" name="search"
                                                                 value="{{ request()->get('search') }}"
-                                                                placeholder="{{ trans('custom.search.search_by_user_name') }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="input-group mb-3">
-                                                            <input type="email" class="form-control" name="email"
-                                                                value="{{ request()->get('email') }}"
-                                                                placeholder="{{ trans('custom.search.search_by_email') }}">
+                                                                placeholder="ابحث باسم القاعة">
                                                         </div>
                                                     </div>
                                                     <div class="col">
@@ -75,8 +68,7 @@
                                                     </div>
                                                     <div class="col">
                                                         <div class="input-group-append">
-                                                            <button class="btn btn-primary"
-                                                                type="submit">{{ trans('custom.search.search') }}</button>
+                                                            <button class="btn btn-primary" type="submit">بحث</button>
                                                         </div>
                                                     </div>
                                                 </div>
