@@ -216,7 +216,7 @@
                                 class="mr-1 user-name text-bold-700">{{ auth('web')->user()->name }}</span><span
                                 class="avatar avatar-online">
                                 <i></i></span></a>
-                        @if (auth('web')->user()->type == \App\Models\User::where('type', 'admin'))
+                        @if (auth('web')->user()->type == 'admin')
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admin.logout') }}"
