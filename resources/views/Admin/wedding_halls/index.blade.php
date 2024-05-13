@@ -95,6 +95,7 @@
                                                         <th>السعر</th>
                                                         <th>تاريخ الاضافة</th>
                                                         <th>الموقع</th>
+                                                        <th>القسم</th>
                                                         <th>العمليات</th>
                                                     </tr>
                                                 </thead>
@@ -113,6 +114,7 @@
                                                                         loading="lazy"
                                                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                                                 </td>
+                                                                <td>{{ $admin->weddingHallCategory?->name ?? '-' }}</td>
                                                                 <td>
                                                                     <a href="{{ route('wedding-halls.edit', $admin->id) }}"
                                                                         class="btn btn-info btn-sm">

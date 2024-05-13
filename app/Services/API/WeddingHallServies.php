@@ -32,6 +32,7 @@ class WeddingHallServies{
     }
     public function booking(BookingRequest $request)
     {
+        // return $request;
         if($this->checkWeddingHallActive($request)){
             return $this->MakeResponse([],'Wedding Hall Not Active',false,400);
         }

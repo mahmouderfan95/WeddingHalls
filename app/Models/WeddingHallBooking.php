@@ -18,4 +18,9 @@ class WeddingHallBooking extends Model
     {
         return $this->belongsTo(User::class,'user_id');
     }
+    public function CalcProfit()
+    {
+        $profit = $this->weddingHall->price * 20 / 100;
+        return $profit;
+    }
 }

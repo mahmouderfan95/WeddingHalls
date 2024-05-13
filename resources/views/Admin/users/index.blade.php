@@ -81,6 +81,9 @@
                                                         <th>#</th>
                                                         <th>الاسم</th>
                                                         <th>البريد الالكترونى</th>
+                                                        <th>الهاتف</th>
+                                                        <th>الرقم القومى</th>
+                                                        <th>العنوان</th>
                                                         <th>تاريخ الاضافة</th>
                                                         <th>العمليات</th>
                                                     </tr>
@@ -92,6 +95,9 @@
                                                                 <td>{{$index + 1}}</td>
                                                                 <td>{{$admin->name ?? '-'}}</td>
                                                                 <td>{{$admin->email ?? '-'}}</td>
+                                                                <td>{{$admin->phone ?? '-'}}</td>
+                                                                <td>{{$admin->national_id ?? '-'}}</td>
+                                                                <td>{{$admin->address ?? '-'}}</td>
                                                                 <td>{{$admin->created_at->format('d/m/Y') ?? '-'}}</td>
                                                                 <td>
                                                                     <a href="{{ route('users.edit',$admin->id) }}" class="btn btn-info btn-sm">

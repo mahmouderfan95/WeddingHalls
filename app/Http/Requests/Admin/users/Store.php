@@ -25,10 +25,13 @@ class Store extends FormRequest
             case 'POST':
             {
                 return [
-                    'name' => 'required|string',
-                    'email' => 'required|email',
+                    'name' => 'required|string|min:8',
+                    'email' => 'required|email|ends_with:.com',
                     'password' => 'required|min:8',
-                    'type' => 'required|string'
+                    'address' => 'required|string|min:10|max:250',
+                    'phone' => 'required|string',
+                    'type' => 'required|string',
+                    'national_id' => 'required|digits:14|numeric'
                 ];
             }
             case 'PUT':
@@ -38,6 +41,10 @@ class Store extends FormRequest
 //                    'id' => '',
                     'name' => 'required|string',
                     'email' => 'required|email',
+                    // 'address' => 'required|string|min:10|max:250',
+                    // 'phone' => 'required|string',
+                    // 'type' => 'required|string',
+                    // 'national_id' => 'required|digits:14|numeric'
                 ];
             }
             default: break;

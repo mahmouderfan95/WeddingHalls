@@ -97,6 +97,7 @@
                                                         <th>اسم القاعة</th>
                                                         <th>السعر</th>
                                                         <th>يوم الحجز</th>
+                                                        <th>الربح</th>
                                                         <th>العمليات</th>
                                                     </tr>
                                                 </thead>
@@ -109,6 +110,7 @@
                                                                 <td>{{ $admin->weddingHall?->name ?? '-' }}</td>
                                                                 <td>{{ $admin->weddingHall?->price ?? '-' }}</td>
                                                                 <td>{{ $admin->day_of_booking}}</td>
+                                                                <td>{{ $admin->profit}}</td>
                                                                 <td>
                                                                     <button type="button"
                                                                         class="btn btn-btn btn-danger btn-sm "

@@ -51,6 +51,39 @@
                                                         @enderror
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>الهاتف المحمول</label>
+                                                            <input type="text" class="form-control" name="phone" value="{{ old('phone',$user->phone) }}" placeholder="phone">
+                                                        </div>
+                                                        @error('phone')
+                                                        <p class="text-danger" style="font-size: 12px">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>العنوان</label>
+                                                            <input type="text" class="form-control" name="address" value="{{ old('address',$user->address) }}" placeholder="address">
+                                                        </div>
+                                                        @error('address')
+                                                        <p class="text-danger" style="font-size: 12px">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>الرقم القومى</label>
+                                                            <input type="text" class="form-control" name="national_id" value="{{ old('national_id',$user->national_id) }}" placeholder="national_id">
+                                                        </div>
+                                                        @error('national_id')
+                                                        <p class="text-danger" style="font-size: 12px">{{ $message }}</p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="form-actions">
                                                 <button type="submit" class="btn btn-primary">

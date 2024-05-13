@@ -64,6 +64,7 @@ class UserServices{
     public function update(User $user,Store $request)
     {
         try{
+            // return $request;
             $this->alertService->getAlertMessage('success message',trans('custom.success_messages.user_updated'));
             $user = $user->update($request->validated());
             return redirect(route('users.index'));
