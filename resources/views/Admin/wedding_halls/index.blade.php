@@ -79,7 +79,7 @@
                                                     <div class="col">
                                                         <div class="input-group-append">
                                                             <button class="btn btn-primary"
-                                                                type="submit">{{ trans('custom.search.search') }}</button>
+                                                                type="submit">بحث</button>
                                                         </div>
                                                     </div>
                                                 </div>
