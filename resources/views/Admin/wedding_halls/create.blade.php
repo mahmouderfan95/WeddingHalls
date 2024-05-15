@@ -64,7 +64,7 @@
                                                                 name="price" value="{{ old('price') }}"
                                                                 placeholder="price" required>
                                                         </div>
-                                                        @error('name')
+                                                        @error('price')
                                                             <p class="text-danger" style="font-size: 12px">{{ $message }}
                                                             </p>
                                                         @enderror
@@ -87,10 +87,26 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
+                                                            <label for="profit_ratio">نسبة الربح</label>
+                                                            <input id="profit_ratio" type="number" class="form-control"
+                                                                name="profit_ratio" value="{{ old('profit_ratio') }}"
+                                                                placeholder="profit ratio" required>
+                                                        </div>
+                                                        @error('profit_ratio')
+                                                            <p class="text-danger" style="font-size: 12px">{{ $message }}
+                                                            </p>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
                                                             <label for="price">قسم القاعة</label>
-                                                            <select id="wedding_hall_category_id" class="form-control" name="wedding_hall_category_id">
+                                                            <select id="wedding_hall_category_id" class="form-control"
+                                                                name="wedding_hall_category_id">
                                                                 @foreach ($weddingHallCategories as $item)
-                                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                                    <option value="{{ $item->id }}">
+                                                                        {{ $item->name }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

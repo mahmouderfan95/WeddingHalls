@@ -20,7 +20,7 @@ class WeddingHallBooking extends Model
     }
     public function CalcProfit()
     {
-        $profit = $this->weddingHall->price * 20 / 100;
+        $profit = $this->weddingHall->price * $this->weddingHall->profit_ratio / 100;
         return $profit;
     }
 }

@@ -30,6 +30,7 @@ class Store extends FormRequest
                     'price' => 'required',
                     'wedding_hall_category_id' => 'required|exists:wedding_hall_categories,id',
                     'location' => 'required',
+                    'profit_ratio' => 'required'
                 ];
             }
             case 'PUT':

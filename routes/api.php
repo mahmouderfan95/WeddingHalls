@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 // });
 // auth routes
 Route::group(['middleware' => 'auth:sanctum'],function(){
+    // profile user
+    Route::get('user/profile',[AuthController::class,'profile']);
     // wedding_hall_booking
     Route::post('user/wedding-hall-booking',[WeddingHallController::class,'booking']);
 });

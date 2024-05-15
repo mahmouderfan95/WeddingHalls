@@ -55,6 +55,7 @@ class WeddingHallsServices
                 'price' => $request->get('price'),
                 'wedding_hall_category_id' => $request->wedding_hall_category_id,
                 'location' => $request->location,
+                'profit_ratio' => $request->profit_ratio
             ]);
             return redirect(route('wedding-halls.index'));
         }catch (\Exception $exception){

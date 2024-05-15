@@ -38,4 +38,16 @@ class AuthServices{
             return $this->MakeResponseAuth(new LoginResource($user),'user logged',true,200,$token);
         }
     }
+    public function profile()
+    {
+        try{
+            $user = auth('sanctum')->user();
+            if($user)
+                return $this->MakeResponse(new LoginResource($user),'success message',true,200);
+            return $this->MakeResponse([],'user not found',false,400);
+        }catch(\Exception $exception)
+        {
+            return $this->MakeResponse([],$exception->getMessage(),false,500);
+        }
+    }
 }
