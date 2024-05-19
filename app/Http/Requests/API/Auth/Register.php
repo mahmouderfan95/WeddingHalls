@@ -45,6 +45,7 @@ class Register extends FormRequest
             'phone.max' => 'The phone may not be greater than 11.',
             'address.required' => 'The address field is required.',
             'national_id.required' => 'The national_id field is required.',
+            'national_id.digits' => 'The phone number must be exactly :digits digits.'
 
         ];
     }
