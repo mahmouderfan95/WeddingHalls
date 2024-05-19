@@ -36,6 +36,7 @@ class Register extends FormRequest
             'name.required' => 'The name field is required.',
             'name.string' => 'The name must be a string.',
             'name.max' => 'The name may not be greater than 155 characters.',
+            'name.min' => 'The name must be at least 8 characters long.',
             'email.required' => 'The email field is required.',
             'email.email' => 'Please enter a valid email address.',
             'email.unique' => 'This email is already registered.',
