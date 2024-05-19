@@ -22,12 +22,30 @@ class Register extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|min:8',
+            'name' => 'required|string|min:8|max:155',
             'email' => 'required|email|unique:users,email|ends_with:.com',
             'password' => 'required|string|min:8',
             'phone' => 'required|max:11',
             'address' => 'required|string',
             'national_id' => 'required|digits:14'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 155 characters.',
+            'email.required' => 'The email field is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'This email is already registered.',
+            'password.required' => 'The password field is required.',
+            'password.min' => 'The password must be at least 8 characters long.',
+            'phone.required' => 'The phone field is required.',
+            'phone.max' => 'The phone may not be greater than 11.',
+            'address.required' => 'The address field is required.',
+            'national_id.required' => 'The national_id field is required.',
+
         ];
     }
 }
